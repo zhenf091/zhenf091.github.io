@@ -1,0 +1,31 @@
+{
+	"fragments": [
+		"Your words touch my heart, whispers of truth reflections, with fingers of love.",
+		"Love is not complex, it demands an absent mind, and a present heart.",
+		"Your body arched, taut and trembling like a bow, I, the archer."
+	]
+}
+
+
+// {
+// 	"happy": [
+// 		"Your words touch my heart, whispers of truth reflections, with fingers of love.",
+// 		"Love is not complex, it demands an absent mind, and a present heart.",
+// 		"Your body arched, taut and trembling like a bow, I, the archer."
+// 	],
+// 	"sad": [
+// 		"Your words touch my heart, whispers of truth reflections, with fingers of love.",
+// 		"Love is not complex, it demands an absent mind, and a present heart.",
+// 		"Your body arched, taut and trembling like a bow, I, the archer."
+// 	],
+// 	"?": [
+// 		"Your words touch my heart, whispers of truth reflections, with fingers of love.",
+// 		"Love is not complex, it demands an absent mind, and a present heart.",
+// 		"Your body arched, taut and trembling like a bow, I, the archer."
+// 	]
+
+
+// }
+
+// var rand = Math.floor(random(data.happy.length));
+// data.happy[rand] + data.sad[rand];

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+    <style> 
+    	body {
+    		padding: 0; 
+    		margin: 20px; 
+    		background: salmon; 
+    		display: flex;
+    		justify-content: center;
+    		align-items: center;
+  		} 
+		</style>
+<title>Love Generator</title>
+</head>
+<body>
+<div id="output"></div>
+
+
+<h1 class=textstyle><p id="text">body text inline</p></h1>
+<button type="button" onclick="scrambleText.play().start();">START</button>
+
+<!-- <button type="button" onclick="scrambleText.stop()">STOP</button> -->
+
+<p id="text"></p>
+
+
+<script src="../dist/ScrambleText.js"></script>
+<script src="./p5.min.js"></script>
+<script src="sketch.js"></script>
+<script src="style.css"></script>
+<script>
+
+
+
+//var scrambleText = new ScrambleText( document.getElementById( 'text1' ) ).start();
+var scrambleText = new ScrambleText(
+	document.getElementById( 'text' ),
+	{
+		timeOffset : 200,
+		strings:[
+  		"Your words touch my heart, whispers of truth reflections, with fingers of love.",
+		  "Love is not complex, it demands an absent mind, and a present heart.",
+ 		 "Your body arched, taut and trembling like a bow, I, the archer."
+	],
+		callback: function () { console.log( 'ended' ); }
+	}
+).stop();
+
+
+</script>
+
+</body>
+</html>
+
+

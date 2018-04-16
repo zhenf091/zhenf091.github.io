@@ -1,0 +1,16 @@
+
+textstyle{
+  text-transform:uppercase;
+  color:#fdf6f0;
+  font-size:20em;
+  font-weight:bold;
+  text-align:left;
+  text-shadow:0.08em 0em #940f08;
+}
+
+button{
+  position:absolute;
+    transition: .5s ease;
+    top: 50%;
+    left: 50%;
+}
