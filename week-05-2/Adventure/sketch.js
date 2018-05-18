@@ -30,12 +30,12 @@ function setup() {
 }
 
 function draw() {
-  background(231, 190, 150);
+  background(random(0,255));
   scenes[currentScene].display();
 
   fill(0);
   textSize(24);
-  text("press the option number to advance to the indicated scene", 50, 700);
+  text("press the number if you suspects the person being the killer", 50, 500);
 }
 
 function CreateScenesFromData(data) {
