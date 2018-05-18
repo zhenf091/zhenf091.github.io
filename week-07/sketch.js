@@ -2,7 +2,7 @@ var weather;
 
 function setup(){
 	createCanvas(800,800);
-	loadJSON("http://api.openweathermap.org/data/2.5/weather?q=London&APPID=f6bb96f9cf44837394a4502cb700e06f",gotData,'jsonp');
+	loadJSON("https://api.openweathermap.org/data/2.5/weather?q=London&APPID=f6bb96f9cf44837394a4502cb700e06f",gotData,'jsonp');
 }
 
 function gotData(data){
