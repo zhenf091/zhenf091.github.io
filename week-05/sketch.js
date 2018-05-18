@@ -21,7 +21,7 @@ function draw() {
     paintmarks[i].display();
   }
 
-  fill(0);
+  fill(random(0,255));
   textSize(24);
   text("drag the mouse across the canvas to draw.", 50, 570);
   text("press 'S' to save a json file with the current paint data.", 50, 600);
@@ -33,8 +33,8 @@ function PaintMark(position) {
 
   this.display = function() {
     noStroke();
-    fill(250,0,250);
-    ellipse(this.position.x, this.position.y, 10, 10);
+    fill(random(0,255));
+    ellipse(this.position.x, this.position.y, random(300),random(300));
   }
 
 }
