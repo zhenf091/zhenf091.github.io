@@ -1,3 +1,4 @@
+
 var ball;
 
 var p1;
@@ -10,15 +11,12 @@ var p1Up = false;
 var p1Down = false;
 var p2Up = false;
 var p2Down = false;
-var p1Laser = false;
-var p2Laser = false;
 var p1Score = 0;
 var p2Score = 0;
 
 
 function setup() {
 	createCanvas(500, 500);
-
 	ball = new Ball();
 	p1 = new Paddle(0);
 	p2 = new Paddle(1);
@@ -45,14 +43,9 @@ function draw() {
 	text(p1Score, width / 2 - 100, 50);
 	fill(255, 0, 0);
 	text(p2Score, width / 2 + 100, 50);
-
-	fill(random(255), random(255), random(255));
-	for (var i = 0; i < 501; i = i + 20) {
-		rect(width / 2, i, 12, 12);
-	}
+	fill(255, 255, 255);
 }
 
-// Ball class
 
 function Ball() {
 	this.pos = createVector(width / 2, height / 2);
@@ -65,24 +58,13 @@ function Ball() {
 
 	this.update = function () {
 
-		if (p2Score >= 11) {
-			// for (var i = 20; i < 502; i = i + 35) {
-			// 	for (var j = 0; j < 503; j = j + 35) {
-			// 		fill(0);
-			// 		rect(i, j, 20, 20);
-			// 	}
-			// }
+		if (p2Score >= 5) {
 			fill(255);
 			text('Win!', width / 2 + 100, 100);
-		} else if (p1Score >= 11) {
-			// for (var i = 20; i < 502; i = i + 35) {
-			// 	for (var j = 0; j < 503; j = j + 35) {
-			// 		ellipse(i, j, 20, 20);
-			// 	}
-			// }
+		} else if (p1Score >= 5) {
 			fill(255);
 			text('Win!', width / 2 - 100, 100);
-		} else if (p2Score < 11) {
+		} else if (p2Score < 5) {
 			if (this.pos.x < this.s / 2) {
 				p2Score++;
 				this.pos.x = width / 2;
@@ -118,29 +100,15 @@ function Ball() {
 }
 
 
-
-
-
-
-
 function Paddle(whichPlayer) {
 	playerNum = whichPlayer;
-	// this.pos = createVector(0,0);
-	// this.vel = createVector(0,0);
-	var laserPos;
-	var laserPosY;
 	var w = 20;
 	var h = 100;
-	//this.num = whichPlayer;
 
 	if (whichPlayer == 0) {
 		this.pos = createVector(width - 15, height / 2);
-		laserPos = this.pos.x;
-		laserPosY = this.pos.y;
 	} else if (whichPlayer == 1) {
 		this.pos = createVector(15, height / 2);
-		laserPos = this.pos.x;
-		laserPosY = this.pos.y;
 	}
 
 	this.update = function () {
@@ -151,24 +119,6 @@ function Paddle(whichPlayer) {
 			if (p1Down && this.pos.y + h / 2 < width) {
 				this.pos.y += 10;
 			}
-			if (p1Laser) {
-				laserPosY = this.pos.y;
-				stroke(0, 135, 255);
-				strokeWeight(5);
-				line(laserPos + 20, laserPosY - 10, laserPos + 10, laserPosY - 10);
-				line(laserPos + 20, laserPosY + 10, laserPos + 10, laserPosY + 10);
-
-				line(laserPos, laserPosY, laserPos + 10, laserPosY);
-				laserPos -= 5;
-				noStroke();
-
-				if (laserPos < -10) {
-					p1Laser = false;
-					laserPos = this.pos.x;
-					laserPosY = this.pos.y;
-				}
-			}
-			//this. pos. add(this.vel);
 		}
 
 		if (whichPlayer == 1) {
@@ -177,23 +127,6 @@ function Paddle(whichPlayer) {
 			}
 			if (p2Down && this.pos.y + h / 2 < width) {
 				this.pos.y += 10;
-			}
-			if (p2Laser) {
-				laserPosY = this.pos.y;
-				stroke(255, 199, 0);
-				strokeWeight(5);
-				line(laserPos - 10, laserPosY - 10, laserPos, laserPosY - 10);
-				line(laserPos - 10, laserPosY + 10, laserPos, laserPosY + 10);
-
-				line(laserPos, laserPosY, laserPos + 10, laserPosY);
-				laserPos += 5;
-				noStroke();
-
-				if (laserPos > width + 10) {
-					p2Laser = false;
-					laserPos = this.pos.x;
-					laserPosY = this.pos.y;
-				}
 			}
 		}
 	}
@@ -217,7 +150,6 @@ function keyPressed() {
 		p2Laser = true;
 	}
 
-	// note - we aren't checking for keyCode anymore.
 	if (keyCode === UP_ARROW) {
 		p1Up = true;
 	}
