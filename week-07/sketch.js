@@ -15,8 +15,8 @@ function draw(){
 	if (weather){
 		ellipse(100,100,weather.main.temp,weather.main.temp);
 		ellipse(100,100,weather.main.humidity,weather.main.humidity);
-	// 	ellipse(100,100,weather.wind.speed,weather.wind.speed);
-	// 	ellipse(100,100,weather.wind.deg,weather.wind.deg);
-	// 	ellipse(100,100,sys.id,sys.id);
+		ellipse(100,100,weather.wind.speed,weather.wind.speed);
+		ellipse(100,100,weather.wind.deg,weather.wind.deg);
+		ellipse(100,100,sys.id,sys.id);
 	 }
 	}
